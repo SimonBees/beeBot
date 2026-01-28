@@ -113,28 +113,3 @@ func GetUserProfileHandler(c *fiber.Ctx) error {
 		"user": user,
 	})
 }
-
-// ValidateJWTMiddleware validates the JWT token
-func ValidateJWTMiddleware(c *fiber.Ctx) error {
-	// This is a simplified version - in production, implement proper JWT validation
-	tokenString := c.Get("Authorization")
-	if tokenString == "" {
-		return c.Status(401).JSON(fiber.Map{
-			"error": "Authorization header missing",
-		})
-	}
-	
-	// For now, we'll skip the actual validation for simplicity
-	// In a real implementation, parse and validate the JWT
-	
-	// Mock user object for demonstration
-	mockUser := &models.User{
-		ID:       1,
-		Username: "demo_user",
-		Email:    "demo@example.com",
-	}
-	
-	c.Locals("user", mockUser)
-	
-	return c.Next()
-}
