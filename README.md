@@ -1,95 +1,95 @@
 # beeBot Server
 
-基于 Go 和 Fiber 框架的企业级服务端系统
+Enterprise-grade backend system based on Go and Fiber framework
 
-## 项目结构
+## Project Structure
 
 ```
 beeBot/
 ├── cmd/
 │   └── server/
-│       └── main.go          # 主入口文件
+│       └── main.go          # Main entry point
 ├── config/
-│   └── config.go           # 配置管理
-├── handlers/               # HTTP请求处理器
+│   └── config.go           # Configuration management
+├── handlers/               # HTTP request handlers
 │   └── base_handlers.go
-├── routes/                 # 路由定义
+├── routes/                 # Route definitions
 │   └── routes.go
-├── models/                 # 数据模型
-├── services/               # 业务逻辑层
-├── utils/                  # 工具函数
-├── api/                    # API定义
+├── models/                 # Data models
+├── services/               # Business logic layer
+├── utils/                  # Utility functions
+├── api/                    # API definitions
 ├── go.mod
 ├── go.sum
 └── Makefile
 ```
 
-## 功能特性
+## Features
 
-- 基于 Fiber 框架的高性能 Web 服务器
-- 配置管理
-- 健康检查端点
-- 模块化路由结构
-- 可扩展的架构
+- High-performance web server based on Fiber framework
+- Configuration management
+- Health check endpoint
+- Modular routing structure
+- Scalable architecture
 
-## 快速开始
+## Quick Start
 
-### 环境要求
+### Requirements
 
 - Go 1.18+
 
-### 安装依赖
+### Install Dependencies
 
 ```bash
 go mod tidy
 ```
 
-### 构建项目
+### Build Project
 
 ```bash
 make build
 ```
 
-### 运行服务
+### Run Server
 
 ```bash
 make run
 ```
 
-### 测试接口
+### Test Endpoints
 
-- `GET /` - 欢迎页面
-- `GET /health` - 健康检查
-- `GET /api/v1/` - API接口组
+- `GET /` - Welcome page
+- `GET /health` - Health check
+- `GET /api/v1/` - API endpoints
 
-## 环境变量
+## Environment Variables
 
-- `PORT` - 服务端口 (默认: 3000)
-- `ENV` - 环境 (默认: development)
-- `DB_HOST` - 数据库主机
-- `DB_PORT` - 数据库端口
-- `DB_USER` - 数据库用户
-- `DB_PASS` - 数据库密码
-- `DB_NAME` - 数据库名称
-- `JWT_SECRET` - JWT密钥
+- `PORT` - Server port (default: 3000)
+- `ENV` - Environment (default: development)
+- `DB_HOST` - Database host
+- `DB_PORT` - Database port
+- `DB_USER` - Database user
+- `DB_PASS` - Database password
+- `DB_NAME` - Database name
+- `JWT_SECRET` - JWT secret key
 
-## 开发规范
+## Development Standards
 
-- 所有代码遵循 Go 语言规范
-- 使用标准的 Go 项目结构
-- 统一的错误处理机制
-- 完整的单元测试覆盖
+- All code follows Go language standards
+- Standard Go project structure
+- Unified error handling
+- Complete unit test coverage
 
-## 部署
+## Deployment
 
 ```bash
-# 生产环境构建
+# Production build
 make build-linux
 
-# 运行
+# Run
 ./bin/server-linux
 ```
 
-## 许可证
+## License
 
-见 LICENSE 文件
+See LICENSE file
