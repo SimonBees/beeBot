@@ -11,6 +11,9 @@ func main() {
 	// Load configuration
 	cfg := config.LoadConfig()
 
+	// Initialize database
+	config.InitDatabase()
+
 	// Initialize Fiber app
 	app := fiber.New(fiber.Config{
 		AppName: "beeBot Server v1.0.0",

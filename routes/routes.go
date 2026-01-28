@@ -13,6 +13,15 @@ func SetupRoutes(app *fiber.App) {
 	// API routes group
 	api := app.Group("/api/v1")
 	
+	// Authentication routes
+	auth := api.Group("/auth")
+	auth.Post("/register", handlers.RegisterHandler)
+	auth.Post("/login", handlers.LoginHandler)
+	
+	// Protected routes
+	protected := api.Group("/user").Use(handlers.ValidateJWTMiddleware)
+	protected.Get("/profile", handlers.GetUserProfileHandler)
+	
 	// Add more routes here as needed
 	setupUserRoutes(api)
 }
